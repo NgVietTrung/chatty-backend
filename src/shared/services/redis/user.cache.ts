@@ -31,9 +31,9 @@ export class UserCache extends BaseCache {
       location,
       school,
       quote,
-      social,
+      bgImageId,
       bgImageVersion,
-      bgImageId
+      social
     } = createdUser;
 
     const firstList: string[] = [
@@ -47,25 +47,28 @@ export class UserCache extends BaseCache {
       `${email}`,
       'avatarColor',
       `${avatarColor}`,
+      'createdAt',
+      `${createdAt}`,
       'postsCount',
-      `${postsCount}`,
-      'profilePicture',
-      `${profilePicture}`,
+      `${postsCount}`
+    ];
+    const secondList: string[] = [
       'blocked',
       JSON.stringify(blocked),
       'blockedBy',
-      JSON.stringify(blockedBy)
-    ];
-
-    const secondList: string[] = [
-      'notifications',
-      JSON.stringify(notifications),
-      'social',
-      JSON.stringify(social),
+      JSON.stringify(blockedBy),
+      'profilePicture',
+      `${profilePicture}`,
       'followersCount',
       `${followersCount}`,
       'followingCount',
       `${followingCount}`,
+      'notifications',
+      JSON.stringify(notifications),
+      'social',
+      JSON.stringify(social)
+    ];
+    const thirdList: string[] = [
       'work',
       `${work}`,
       'location',
@@ -79,8 +82,7 @@ export class UserCache extends BaseCache {
       'bgImageId',
       `${bgImageId}`
     ];
-
-    const dataToSave: string[] = [...firstList, ...secondList];
+    const dataToSave: string[] = [...firstList, ...secondList, ...thirdList];
 
     try {
       if (!this.client.isOpen) {
