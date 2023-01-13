@@ -37,3 +37,24 @@ GET {{baseUrl}}/{{urlPath}}/currentuser
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
+
+###
+GET {{baseUrl}}/{{urlPath}}/forgot-password
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "email": "trung@gmail.com"
+}
+
+###
+GET {{baseUrl}}/{{urlPath}}/reset-password/123741765910709643
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "password": "123456789",
+  "confirmPassword": "123456789"
+}
