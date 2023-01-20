@@ -14,6 +14,7 @@ import { createClient } from 'redis';
 import { createAdapter } from '@socket.io/redis-adapter';
 import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
 import 'express-async-errors';
+import { SocketIOPostHandler } from '@socket/post';
 
 const SERVER_POST = 5000;
 const log: Logger = config.createLogger('server');
@@ -118,6 +119,7 @@ export class ChattyServer {
   }
 
   private socketIOConnections(io: Server): void {
-    log.info('socketIOConnections');
+    const postSocketHandler: SocketIOPostHandler = new SocketIOPostHandler(io);
+    postSocketHandler.listen();
   }
 }
