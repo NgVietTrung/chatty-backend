@@ -1,0 +1,63 @@
+@baseUrl = http://localhost:5000
+@urlPath = api/v1
+
+###
+POST {{baseUrl}}/{{urlPath}}/post
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "post": "This is my third post",
+  "bgColor": "#f0f0f0",
+  "privacy": "Public",
+  "feelings": "",
+  "gifUrl": "",
+  "profilePicture": ""
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/post/image/post
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "post": "This is my third post",
+  "bgColor": "#f0f0f0",
+  "privacy": "Public",
+  "feelings": "",
+  "gifUrl": "",
+  "profilePicture": "",
+  "image": ""
+}
+
+###
+GET {{baseUrl}}/{{urlPath}}/post/all/1
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+DELETE {{baseUrl}}/{{urlPath}}/post/63c578acaf2e967eb18235da
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+
+###
+PUT {{baseUrl}}/{{urlPath}}/post/63c7d025ff906f535557b455
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "post": "This is my third post but its updated",
+  "bgColor": "#f0f0f0",
+  "privacy": "Public",
+  "feelings": "",
+  "gifUrl": "",
+  "profilePicture": "",
+  "imgId": "",
+  "imgVersion": ""
+}
