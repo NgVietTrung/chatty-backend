@@ -1,10 +1,11 @@
 import Logger from 'bunyan';
 import { BaseCache } from '@service/redis/base.cache';
 import { config } from '@root/config';
-import { IPostDocument, IReactions, ISavePostToCache } from '@post/interfaces/post.interface';
+import { IPostDocument, ISavePostToCache } from '@post/interfaces/post.interface';
 import { ServerError } from '@global/helpers/error-handler';
 import { Helper } from '@global/helpers/helpers';
 import { RedisCommandRawReply } from '@redis/client/dist/lib/commands';
+import { IReactions } from '@reaction/interfaces/reaction.interface';
 
 export type PostCacheMultiType = string | number | Buffer | RedisCommandRawReply[] | IPostDocument | IPostDocument[];
 
