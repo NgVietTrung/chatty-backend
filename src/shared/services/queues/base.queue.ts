@@ -8,8 +8,9 @@ import { ExpressAdapter } from '@bull-board/express';
 import { config } from '@root/config';
 import { IPostJobData } from '@post/interfaces/post.interface';
 import { IReactionJob } from '@reaction/interfaces/reaction.interface';
+import { ICommentJob } from '@comment/interfaces/comment.interface';
 
-type IBaseJobData = IAuthJob | IEmailJob | IPostJobData | IReactionJob;
+type IBaseJobData = IAuthJob | IEmailJob | IPostJobData | IReactionJob | ICommentJob;
 
 let bullAdapter: BullAdapter[] = [];
 

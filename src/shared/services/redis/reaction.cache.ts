@@ -53,7 +53,9 @@ export class ReactionCache extends BaseCache {
       await multi.exec();
 
       const dataToSave: string[] = ['reactions', JSON.stringify(postReactions)];
-      await this.client.HSET(`posts:${key}`, dataToSave);
+      for (let i = 0; i < dataToSave.length; i += 2) {
+        await this.client.HSET(`posts:${key}`, dataToSave[i], dataToSave[i + 1]);
+      }
     } catch (error) {
       log.error(error);
       throw new ServerError('Server error. Try again.');

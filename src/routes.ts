@@ -1,3 +1,4 @@
+import { commentRoutes } from './features/comments/routes/commentRoutes';
 import { authRoutes } from './features/auth/routes/authRoutes';
 import { Application } from 'express';
 import { serverAdapter } from '@service/queues/base.queue';
@@ -17,6 +18,7 @@ export default (app: Application) => {
     app.use(BASE_PATH, authMiddleware.verifyUser, currentUserRoutes.routes());
     app.use(BASE_PATH, authMiddleware.verifyUser, postRoutes.routes());
     app.use(BASE_PATH, authMiddleware.verifyUser, reactionRoutes.routes());
+    app.use(BASE_PATH, authMiddleware.verifyUser, commentRoutes.routes());
   };
 
   routes();
