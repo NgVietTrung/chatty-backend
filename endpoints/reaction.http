@@ -1,4 +1,43 @@
 @baseUrl = http://localhost:5000
 @urlPath = api/v1
 
+###
+GET {{baseUrl}}/{{urlPath}}/post/reactions/63c7d025ff906f535557b455
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
 
+###
+GET {{baseUrl}}/{{urlPath}}/post/single/reaction/username/Trung/63c7d025ff906f535557b455
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+GET {{baseUrl}}/{{urlPath}}/post/reactions/username/Trung
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+POST {{baseUrl}}/{{urlPath}}/post/reaction
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "userTo": "63bb0f353773a318b6c42e61",
+  "postId": "63c7d025ff906f535557b455",
+  "type": "sad",
+  "previousReaction": "",
+  "postReactions": {"like": 0,"love": 0,"happy": 0,"sad": 1,"wow": 0,"angry": 0},
+  "profilePicture": ""
+}
+
+###
+DELETE {{baseUrl}}/{{urlPath}}/post/reaction/63c7d025ff906f535557b455/sad/{"like": 0,"love": 0,"happy": 0,"sad": 0,"wow": 0,"angry": 0}
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{}
