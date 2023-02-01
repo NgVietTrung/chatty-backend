@@ -1,3 +1,4 @@
+import { IFollowerJobData } from './../../../features/followers/interfaces/follower.interface';
 import { IEmailJob } from './../../../features/user/interfaces/user.interface';
 import { IAuthJob } from './../../../features/auth/interfaces/auth.interface';
 import Queue, { Job } from 'bull';
@@ -10,7 +11,7 @@ import { IPostJobData } from '@post/interfaces/post.interface';
 import { IReactionJob } from '@reaction/interfaces/reaction.interface';
 import { ICommentJob } from '@comment/interfaces/comment.interface';
 
-type IBaseJobData = IAuthJob | IEmailJob | IPostJobData | IReactionJob | ICommentJob;
+type IBaseJobData = IAuthJob | IEmailJob | IPostJobData | IReactionJob | ICommentJob | IFollowerJobData;
 
 let bullAdapter: BullAdapter[] = [];
 
