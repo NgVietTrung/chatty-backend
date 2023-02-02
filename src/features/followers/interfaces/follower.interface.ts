@@ -38,9 +38,3 @@ export interface IFollowerJobData {
   username?: string;
   followerDocumentId?: ObjectId;
 }
-
-export interface IBlockedUserJobData {
-  keyOne?: string;
-  keyTwo?: string;
-  type?: string;
-}

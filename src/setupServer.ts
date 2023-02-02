@@ -16,6 +16,7 @@ import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
 import 'express-async-errors';
 import { SocketIOPostHandler } from '@socket/post';
 import { SocketIOFollowerHandler } from '@socket/follower';
+import { SocketIOUserHandler } from '@socket/user';
 
 const SERVER_POST = 5000;
 const log: Logger = config.createLogger('server');
@@ -122,8 +123,10 @@ export class ChattyServer {
   private socketIOConnections(io: Server): void {
     const postSocketHandler: SocketIOPostHandler = new SocketIOPostHandler(io);
     const followerSocketHandler: SocketIOFollowerHandler = new SocketIOFollowerHandler(io);
+    const userSocketHandler: SocketIOUserHandler = new SocketIOUserHandler(io);
 
     postSocketHandler.listen();
     followerSocketHandler.listen();
+    userSocketHandler.listen();
   }
 }
