@@ -1,3 +1,4 @@
+import { IFileImageJobData } from './../../../features/images/interfaces/image.interface';
 import { IFollowerJobData } from './../../../features/followers/interfaces/follower.interface';
 import { IEmailJob } from './../../../features/user/interfaces/user.interface';
 import { IAuthJob } from './../../../features/auth/interfaces/auth.interface';
@@ -21,7 +22,8 @@ type IBaseJobData =
   | ICommentJob
   | IFollowerJobData
   | IBlockedUserJobData
-  | INotificationJobData;
+  | INotificationJobData
+  | IFileImageJobData;
 
 let bullAdapter: BullAdapter[] = [];
 
