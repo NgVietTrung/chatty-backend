@@ -8,6 +8,7 @@ class Application {
     this.loadConfig();
     databaseConnection();
     const app: Express = express();
+    console.log('Starting');
     const server: ChattyServer = new ChattyServer(app);
     server.start();
   }
